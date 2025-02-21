@@ -1,0 +1,8 @@
+site_name: Food Data Management
+theme:
+  name: material
+plugins:
+  - search
+  - mkdocstrings
+nav:
+  - Home: index.md

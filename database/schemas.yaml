@@ -1,0 +1,79 @@
+# database/schemas.yaml
+# Schema definitions for food data tables
+
+food_consumption:
+  commodity:
+    type: str
+    required: true
+    description: "Food item type (e.g., Almonds, Eggs)"
+  
+  age_group:
+    type: str
+    required: true
+    description: "Population age group (e.g., Adults, Children)"
+  
+  mean_consumption_chronic:
+    type: float
+    required: false
+    min: 0
+    description: "Average long-term consumption value"
+  
+  mean_consumption_acute:
+    type: float
+    required: false
+    min: 0
+    description: "Average short-term consumption value"
+  
+  percentile_97_chronic:
+    type: float
+    required: false
+    min: 0
+    description: "97th percentile of long-term consumption"
+  
+  percentile_97_acute:
+    type: float
+    required: false
+    min: 0
+    description: "97th percentile of short-term consumption"
+  
+  notes:
+    type: str
+    required: false
+    description: "Additional information about the food item"
+
+# Example of another table schema that could be added
+trade_volumes:
+  commodity:
+    type: str
+    required: true
+    description: "Food item being traded"
+  
+  year:
+    type: int
+    required: true
+    min: 2000
+    description: "Year of trade data"
+  
+  quarter:
+    type: int
+    required: true
+    min: 1
+    max: 4
+    description: "Quarter (1-4) of the year"
+  
+  import_volume:
+    type: float
+    required: false
+    min: 0
+    description: "Volume of imports in tons"
+  
+  export_volume:
+    type: float
+    required: false
+    min: 0
+    description: "Volume of exports in tons"
+  
+  country_origin:
+    type: str
+    required: false
+    description: "Primary country of origin for imports"
